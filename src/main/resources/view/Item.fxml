@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="778.0" prefWidth="1187.0" stylesheets="@../Style/customerForm.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pharmacy.controller.ItemFormController">
+   <children>
+      <ImageView fitHeight="790.0" fitWidth="1187.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/background16.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="124.0" layoutY="53.0" prefHeight="35.0" prefWidth="63.0" text="ITEM">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="940.0" layoutY="705.0" prefHeight="35.0" prefWidth="218.0" text="United Pharmacy">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="83.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/medicineicon.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="mainCOMItem" layoutX="34.0" layoutY="415.0" onMouseClicked="#itemOnMouse" prefHeight="333.0" prefWidth="1083.0">
+         <columns>
+            <TableColumn fx:id="tblMedId" prefWidth="113.99999618530273" text="MedId" />
+            <TableColumn fx:id="tblMedNmae" prefWidth="140.6667022705078" text="MedNmae" />
+            <TableColumn fx:id="tblUnitPrice" prefWidth="179.3333740234375" text="medUnitPrice" />
+            <TableColumn fx:id="tbltype" prefWidth="184.66671752929688" text="type" />
+            <TableColumn fx:id="tblQuantityOnHands" prefWidth="128.6666259765625" text="Quantity On Hands" />
+            <TableColumn fx:id="tblmfgDate" prefWidth="178.0" text="mfgDate" />
+            <TableColumn fx:id="tblexpDate" prefWidth="156.66668701171875" text="expDate" />
+         </columns>
+      </TableView>
+      <JFXButton layoutX="1015.0" layoutY="367.0" onAction="#btnDeleteOnAction" prefHeight="31.0" prefWidth="102.0" style="-fx-background-radius: 15; -fx-background-color: black;" text="Delete" textFill="#fffefe">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></JFXButton>
+      <JFXButton layoutX="873.0" layoutY="367.0" onAction="#btnUpdateOnAction" prefHeight="31.0" prefWidth="102.0" style="-fx-background-radius: 15; -fx-background-color: black;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></JFXButton>
+      <JFXButton layoutX="725.0" layoutY="367.0" onAction="#buttonSaveOnACT" prefHeight="31.0" prefWidth="102.0" style="-fx-background-radius: 15; -fx-background-color: #58AF50;" text="Add">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></JFXButton>
+      <TextField fx:id="txtsearchItem" layoutX="948.0" layoutY="44.0" onAction="#itemIdOnAction" onKeyTyped="#searchItemOnKey" prefHeight="21.0" prefWidth="176.0" promptText="Search">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <ImageView fitHeight="21.0" fitWidth="31.0" layoutX="1096.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icons8-search-96.png" />
+         </image></ImageView>
+      <TextField fx:id="txtItemCode" layoutX="233.0" layoutY="164.0" onMouseClicked="#txtItemCodeOnMouseClicked" prefHeight="31.0" prefWidth="204.0" />
+      <TextField fx:id="txtItemMedName" layoutX="499.0" layoutY="164.0" prefHeight="31.0" prefWidth="204.0" />
+      <TextField fx:id="txtItemType" layoutX="761.0" layoutY="164.0" prefHeight="31.0" prefWidth="204.0" />
+      <TextField fx:id="txtItemQOH" layoutX="500.0" layoutY="257.0" onMouseClicked="#txtItemQOHOnMouseClicked" prefHeight="31.0" prefWidth="204.0" />
+      <Label layoutX="233.0" layoutY="141.0" prefHeight="21.0" prefWidth="204.0" text="Item Code" />
+      <Label layoutX="500.0" layoutY="141.0" prefHeight="21.0" prefWidth="204.0" text="MedName" />
+      <Label layoutX="761.0" layoutY="141.0" prefHeight="21.0" prefWidth="204.0" text="type" />
+      <Label layoutX="235.0" layoutY="236.0" prefHeight="21.0" prefWidth="204.0" text="expDate" />
+      <Label layoutX="501.0" layoutY="236.0" prefHeight="21.0" prefWidth="204.0" text="Quantity On Hands" />
+      <Label layoutX="763.0" layoutY="236.0" prefHeight="21.0" prefWidth="204.0" text="mfDate" />
+      <TextField fx:id="txtItemUnitPrice" layoutX="233.0" layoutY="335.0" prefHeight="31.0" prefWidth="204.0" />
+      <Label layoutX="235.0" layoutY="313.0" prefHeight="21.0" prefWidth="204.0" text="Med Unit Price" />
+      <DatePicker fx:id="cmbItemDate" layoutX="235.0" layoutY="257.0" prefHeight="31.0" prefWidth="204.0" />
+      <DatePicker fx:id="cmbItemmfgDate" layoutX="763.0" layoutY="257.0" prefHeight="32.0" prefWidth="204.0" />
+      <Label fx:id="wrongitemcodeformat" layoutX="233.0" layoutY="196.0" prefHeight="17.0" prefWidth="280.0" text="Wrong item code format (Valid format - &quot;itm000&quot;)" textFill="RED" />
+      <Label fx:id="lblinvalidqty" layoutX="501.0" layoutY="290.0" prefHeight="17.0" prefWidth="235.0" text="Invalid Format" textFill="RED" />
+   </children>
+</AnchorPane>
